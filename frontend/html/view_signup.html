@@ -1,0 +1,256 @@
+<section id="signup" class="min-h-screen bg-white">
+    <div class="mx-auto flex flex-row items-center justify-center max-w-7xl grid-cols-1 items-center gap-8 px-6 py-16 md:grid-cols-2 md:px-8">
+      <!-- Brand / Illustration -->
+      <div class="order-2 md:order-1">
+        <div class="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
+          <div class="absolute inset-0 -z-10 pointer-events-none" style="background:
+              radial-gradient(600px 300px at 10% -10%, rgba(239,68,68,.10), transparent 60%),
+              radial-gradient(480px 260px at 110% 10%, rgba(239,68,68,.08), transparent 60%);">
+          </div>
+  
+          <div class="mb-6 inline-flex items-center gap-3">
+            <img src="./static/logo.png" alt="Logo" class="h-10 w-10 rounded-md shadow-sm" />
+            <div>
+              <p class="text-xl font-extrabold text-zinc-900">Create your account</p>
+              <p class="text-sm text-zinc-600">Join for early drops, members-only colors, and perks.</p>
+            </div>
+          </div>
+  
+          <ul class="space-y-3 text-sm text-zinc-700">
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-red-600"></span> Free returns on members’ orders</li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-red-600"></span> Saved sizes & fast checkout</li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-red-600"></span> Early access to collabs</li>
+          </ul>
+  
+     
+        </div>
+      </div>
+  
+      <!-- Sign Up Card -->
+      <div class="order-1 md:order-2">
+        <div class="mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm ring-1 ring-transparent hover:ring-[rgba(239,68,68,.25)] transition">
+          <h1 class="text-2xl font-extrabold tracking-tight text-zinc-900">Sign up</h1>
+          <p class="mt-1 text-sm text-zinc-600">Already have an account?
+            <a href="#login" class="font-semibold text-red-700 hover:underline">Log in</a>
+          </p>
+  
+          <form id="signupForm" class="mt-6 space-y-4" novalidate>
+            <!-- Name -->
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <div>
+                <label for="firstName" class="mb-1 block text-sm font-medium text-zinc-800">First name</label>
+                <input id="firstName" type="text" required
+                  class="block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-300 focus:ring-2 focus:ring-red-500/30"
+                  placeholder="Michael" />
+              </div>
+              <div>
+                <label for="lastName" class="mb-1 block text-sm font-medium text-zinc-800">Last name</label>
+                <input id="lastName" type="text" required
+                  class="block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-300 focus:ring-2 focus:ring-red-500/30"
+                  placeholder="Jordan" />
+              </div>
+            </div>
+  
+            <!-- Email -->
+            <div>
+              <label for="emailSignup" class="mb-1 block text-sm font-medium text-zinc-800">Email</label>
+              <input id="emailSignup" type="email" required
+                class="block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-300 focus:ring-2 focus:ring-red-500/30"
+                placeholder="you@example.com" />
+            </div>
+  
+            <!-- Password -->
+            <div>
+              <label for="passwordSignup" class="mb-1 block text-sm font-medium text-zinc-800">Password</label>
+              <div class="relative">
+                <input id="passwordSignup" type="password" required minlength="8"
+                  class="block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 pr-12 text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-300 focus:ring-2 focus:ring-red-500/30"
+                  placeholder="At least 8 characters" />
+                <button type="button" id="togglePw1"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs font-semibold text-zinc-800 hover:bg-zinc-50">
+                  Show
+                </button>
+              </div>
+          
+            </div>
+  
+            <!-- Confirm Password -->
+            <div>
+              <label for="passwordConfirm" class="mb-1 block text-sm font-medium text-zinc-800">Confirm password</label>
+              <div class="relative">
+                <input id="passwordConfirm" type="password" required minlength="8"
+                  class="block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 pr-12 text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-300 focus:ring-2 focus:ring-red-500/30"
+                  placeholder="Repeat your password" />
+                <button type="button" id="togglePw2"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs font-semibold text-zinc-800 hover:bg-zinc-50">
+                  Show
+                </button>
+              </div>
+              <p id="pwMatchText" class="mt-1 text-xs font-medium"></p>
+            </div>
+  
+            <!-- Preferences (optional) -->
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <div>
+                <label for="shoeSize" class="mb-1 block text-sm font-medium text-zinc-800">Shoe size (optional)</label>
+                <select id="shoeSize"
+                  class="w-full rounded-xl border border-zinc-200 bg-white px-3 py-3 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-red-500/30">
+                  <option value="">Select</option>
+                  <option>EU 41</option><option>EU 42</option><option>EU 43</option>
+                  <option>EU 44</option><option>EU 45</option>
+                </select>
+              </div>
+              <div>
+                <label for="favStyle" class="mb-1 block text-sm font-medium text-zinc-800">Favorite style (optional)</label>
+                <select id="favStyle"
+                  class="w-full rounded-xl border border-zinc-200 bg-white px-3 py-3 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-red-500/30">
+                  <option value="">Select</option>
+                  <option>Sneakers</option><option>Running</option><option>Basketball</option><option>Lifestyle</option>
+                </select>
+              </div>
+            </div>
+  
+            <!-- Terms -->
+            <div class="flex items-start gap-3">
+              <input id="terms" type="checkbox" required
+                class="mt-1 h-4 w-4 rounded border-zinc-300 text-red-600 focus:ring-red-500/40" />
+              <label for="terms" class="text-sm text-zinc-700">
+                I agree to the <a href="#terms" class="font-medium text-red-700 hover:underline">Terms</a> and
+                <a href="#privacy" class="font-medium text-red-700 hover:underline">Privacy Policy</a>.
+              </label>
+            </div>
+  
+            <!-- Submit -->
+            <button type="submit"
+              class="inline-flex w-full items-center justify-center rounded-2xl bg-red-600 px-6 py-3.5 text-sm font-semibold text-white shadow-sm ring-1 ring-red-700/10 transition hover:bg-red-700 active:scale-[0.98]">
+              Create account
+            </button>
+  
+            <!-- Or divider -->
+            <div class="flex items-center gap-3">
+              <div class="h-px w-full bg-zinc-200"></div>
+              <span class="text-xs font-medium text-zinc-500">or</span>
+              <div class="h-px w-full bg-zinc-200"></div>
+            </div>
+  
+            <!-- Socials -->
+            <div class="grid grid-cols-2 gap-3">
+              <button type="button" class="rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-zinc-800 hover:border-zinc-300 hover:shadow-sm">
+                Sign up with Google
+              </button>
+              <button type="button" class="rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-zinc-800 hover:border-zinc-300 hover:shadow-sm">
+                Sign up with Apple
+              </button>
+            </div>
+          </form>
+  
+          <!-- Helper text -->
+          <p class="mt-4 text-xs text-zinc-500">
+            We’ll send you product updates and exclusive launches. You can opt out anytime.
+          </p>
+        </div>
+  
+        <!-- Toast (demo) -->
+        <div id="signupToast" class="pointer-events-none fixed inset-x-0 bottom-6 z-50 mx-auto hidden w-fit rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 shadow-md">
+          Account created — welcome!
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Elements
+    const formSU = document.getElementById('signupForm');
+    const emailSU = document.getElementById('emailSignup');
+    const pw1 = document.getElementById('passwordSignup');
+    const pw2 = document.getElementById('passwordConfirm');
+    const toggle1 = document.getElementById('togglePw1');
+    const toggle2 = document.getElementById('togglePw2');
+    const bar = document.getElementById('pwStrengthBar');
+    const strengthText = document.getElementById('pwStrengthText');
+    const matchText = document.getElementById('pwMatchText');
+    const toastSU = document.getElementById('signupToast');
+  
+    // Show/Hide
+    const toggleType = (input, btn) => {
+      const isPw = input.type === 'password';
+      input.type = isPw ? 'text' : 'password';
+      btn.textContent = isPw ? 'Hide' : 'Show';
+    };
+    toggle1.addEventListener('click', () => toggleType(pw1, toggle1));
+    toggle2.addEventListener('click', () => toggleType(pw2, toggle2));
+  
+    // Simple strength meter
+    const strength = (val) => {
+      let s = 0;
+      if (val.length >= 8) s++;
+      if (/[A-Z]/.test(val)) s++;
+      if (/[a-z]/.test(val)) s++;
+      if (/[0-9]/.test(val)) s++;
+      if (/[^A-Za-z0-9]/.test(val)) s++;
+      return Math.min(s, 4); // 0..4
+    };
+  
+    const strengthLabels = ['Weak', 'Fair', 'Good', 'Strong', 'Strong'];
+    const widthMap = ['10%', '35%', '65%', '85%', '100%'];
+  
+    pw1.addEventListener('input', () => {
+      const s = strength(pw1.value);
+      bar.style.width = widthMap[s];
+      // color shift by strength
+      bar.className = 'h-full w-0 rounded-full transition-all ' + (s < 2 ? 'bg-red-600' : s < 3 ? 'bg-orange-500' : 'bg-green-600');
+      strengthText.textContent = 'Strength: ' + strengthLabels[s];
+      // re-check match
+      checkMatch();
+    });
+  
+    const checkMatch = () => {
+      if (!pw2.value) { matchText.textContent = ''; return; }
+      if (pw1.value === pw2.value) {
+        matchText.textContent = 'Passwords match';
+        matchText.className = 'mt-1 text-xs font-medium text-green-600';
+      } else {
+        matchText.textContent = 'Passwords do not match';
+        matchText.className = 'mt-1 text-xs font-medium text-red-600';
+      }
+    };
+    pw2.addEventListener('input', checkMatch);
+  
+    // Basic email format check
+    const validEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+  
+    // Submit (SPA demo)
+    formSU.addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      // front-end validation
+      if (!validEmail(emailSU.value)) {
+        emailSU.focus();
+        emailSU.classList.add('ring-2','ring-red-500/30');
+        setTimeout(() => emailSU.classList.remove('ring-2','ring-red-500/30'), 1000);
+        return;
+      }
+      if (pw1.value.length < 8) { pw1.focus(); return; }
+      if (pw1.value !== pw2.value) { pw2.focus(); return; }
+      if (!document.getElementById('terms').checked) { document.getElementById('terms').focus(); return; }
+  
+      const btn = formSU.querySelector('button[type="submit"]');
+      const prev = btn.textContent;
+      btn.textContent = 'Creating…';
+      btn.disabled = true;
+  
+      // Simulate async sign-up
+      await new Promise(r => setTimeout(r, 1000));
+  
+      btn.textContent = prev;
+      btn.disabled = false;
+  
+      // Show toast
+      toastSU.classList.remove('hidden');
+      setTimeout(() => toastSU.classList.add('hidden'), 1600);
+  
+      // In a real app, route to account or welcome
+      // window.location.hash = '#login'
+    });
+  </script>
+  

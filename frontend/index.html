@@ -1,107 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shoes</title>
+  <meta charset="UTF-8" />
+  <title>Sneakers — New Arrivals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <style>
+    :root {
+      --ring: rgba(239, 68, 68, 0.25);
+    }
+    /* Smooth images */
+    img { image-rendering: auto; }
+  </style>
 </head>
+<body class="font-inter bg-white text-zinc-900 antialiased">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <div class="fixed inset-0 -z-10 bg-red-glow pointer-events-none"></div>
 
+  <header class="sticky top-0 z-40 w-full border-b border-zinc-200/70 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-7xl items-center px-6 md:px-8">
+      <a class="mr-6 inline-flex items-center gap-2" href="#">
+        <img src="./static/logo.png" class="h-10 w-10 rounded-md shadow-soft" alt="Logo">
+      </a>
 
+      <nav class="hidden w-full  md:block">
+        <ul class="flex items-center justify-center gap-4 font-semibold text-zinc-800">
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_main">Home</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_men">Men</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_women">Women</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_kids">Kids</a></li>
+        </ul>
+      </nav>
 
+      <p class="font-semibold">
+        <a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_login">
 
-<link rel="stylesheet" href="./css/styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<body>
-
-<header>
-    <nav class="navbar d-flex flex-row align-items-center justify-content-between w-100 pt-4 bg-light border-bottom rounded-bottom shadow-lg">
-        <div class="w-20 d-flex p-1 align-items-center justify-content-center  text-lg  h-100 text-black">
-            <img src="./static/logo.png"  style="object-fit: contain; height: 40px; width: 40px;" alt="">
-        </div>
-        <div class="w-30 font-bold d-flex justify-content-center gap-4 h-100">
-            <p>New</p>
-            <p>Men</p>
-            <p>Women</p>
-            <p>Kids</p>
-            <p>Sport</p>
-        </div>
-        <div class="w-20 d-flex justify-content-center align-items-center  h-100">
-            <input type="text" class="w-50 bg-medium no-border px-4 py-1  rounded-pill" placeholder="Search">
-        </div>
-    </nav>
-</header>
-
-<div class="w-100  bg-dark position-relative">
-    <img src="https://static.nike.com/a/images/w_2880,h_1410,c_fill,f_auto/c7527e63-a55c-47b7-a07c-b979bf41af13/image.jpg" style="height: 40rem" class="w-100 object-fit-fill" alt="">
-</div>
-
-
-<section aria-live="polite" class="" style=" margin-top: 4rem">
-    <div style="margin:0px 0px 12px;padding:2px 48px 0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;display:flex;-webkit-box-pack:justify;justify-content:space-between;margin-block-end:12px;-webkit-box-align:center;align-items:center;color:rgb(17, 17, 17);">
-        <div data-analytics-placement-id="a9a6818e-ac28-4615-9e02-ffa0d51ebb26_0" data-qa="section-headline" style="flex-direction:row;padding-bottom:0px;display:flex;justify-content:space-between;align-items:baseline;margin:0px;width: 100%;margin-bottom:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;">
-            <div style="width: 100%;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;">
-                <h2 data-qa="title" style="margin-left:48px;margin-right:48px;text-align:left;padding:0px;border:0px none rgb(17, 17, 17);font-size:32px; font-family:'Helvetica Now Display Medium', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;color:rgb(17, 17, 17);text-transform:none;">Shop Our Icons</h2>
-            </div>
-        </div>
-        <div style="margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;"></div>
-        <div role="group" style="margin:0px 0px 0px 12px;align-self:center;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;display:flex;-webkit-box-pack:end;justify-content:flex-end;-webkit-box-align:center;align-items:center;margin-inline-start:12px;"><button aria-hidden="true" disabled="" style="display:flex;cursor:auto;box-sizing:border-box;font-size:16px;border:0px none rgb(158, 158, 160);line-height:28px;overflow:visible;margin:0px;padding:0px;text-transform:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);appearance:none;position:static;transform:none;left:24px;color:rgb(158, 158, 160);top:50%;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;border-radius:24px;">
-            <div style="margin:0px;padding:0px;border:0px none rgb(158, 158, 160);font-size:  / 28px Arial;vertical-align:baseline;box-sizing:border-box;background-color:rgb(245, 245, 245);height:48px;width: 48px;border-radius:24px;display:flex;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;transition:background-color 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);">
-            </div>
-        </div>
+          Login
+        </a>
+      </p>
     </div>
-    <ul aria-labelledby="a9a6818e-ac28-4615-9e02-ffa0d51ebb26" style="color:rgb(112, 112, 114);transition:color 0.25s ease-in-out;margin:0px;scrollbar-color:rgb(112, 112, 114) rgba(0, 0, 0, 0);padding-bottom:30px;list-style:outside none none;padding:0px 0px 30px 48px;border:0px none rgb(112, 112, 114);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;padding-inline-start:48px;scroll-padding:0px 48px;overflow-x: auto;scroll-snap-type:x mandatory;display:flex;">
-        <li data-index="0" aria-hidden="false" index="0" slidenumber="1" slidecount="9" style="flex:0 0 calc(33.3333% - 24px);margin:0px 12px 0px 0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;--column-offset: 20px;color:rgb(17, 17, 17);flex-flow:column nowrap;min-width: auto;scroll-snap-align:start;">
-            <figure data-analytics-placement-id="a9a6818e-ac28-4615-9e02-ffa0d51ebb26_1" data-analytics-has-landmark="true" data-asset-id="b5449146-ce0b-462f-bf97-67650e9183c6" data-click-mod="af5fdad60dc00369486adb40dfdae90074401241ce7d0a464de1ecec235071e4" data-is-carousel-content="true" data-index="0" data-collection-id="a9a6818e-ac28-4615-9e02-ffa0d51ebb26" data-item-count="9" data-qa="filmstrip-card" data-action-hashkeys="6a0cae0bf2ca7819d94a52f21efba2c6b25d6eed193f5290b8fb18cc211b933f" style="margin:0px;position:relative;min-width:300px;box-sizing:border-box;">
-                <div orientation="landscape" data-qa="image-wrapper" style="width: 100%;height: auto;overflow:hidden;min-height:300px;margin:0px;padding:0px;position:relative;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;aspect-ratio:1.46517 / 1;">
-                    <div style="margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;position:absolute;height:300px;width: 100%;">
-                        <div data-qa="image-media" style="height: 100%; width: 100%;width: 100%;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;" data-requested-width="409" data-requested-height="409" data-is-portrait-image-requested="false"><img data-qa="image-media-img" alt="Nike. Just Do It" src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_409,c_limit/b5449146-ce0b-462f-bf97-67650e9183c6/nike-just-do-it.png" data-landscape-url="https://static.nike.com/a/images/f_auto,cs_srgb/w_1920,c_limit/b5449146-ce0b-462f-bf97-67650e9183c6/nike-just-do-it.png" data-portrait-url="https://static.nike.com/a/images/f_auto,cs_srgb/w_960,c_limit/7c80f963-1714-4b22-b640-57533c9eb321/nike-just-do-it.png" data-image-loaded-class="guL_1FMX" style="min-height:300px;opacity:1;display:block;width: 100%;height:300px;object-fit:cover;transition:opacity 0.5s 0.3s;object-position:50% 50%;max-width:100%;box-sizing:border-box;border-style:none;" /></div>
-                    </div>
-                </div>
-                <div data-qa="card-overlay" style="left:48px;top:152px;height:99.9844px;width: calc(100% - 48px);justify-content:flex-end;text-align:left;pointer-events:none;box-sizing:border-box;margin:0px;padding:0px;position:absolute;overflow-wrap:break-word;display:flex;flex-direction:column;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;">
-                    <div data-qa="card-overlay-content" style="margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;">
-                        <div data-qa="cta-container" style="display:inline-block;pointer-events: auto;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;"><a href="https://www.nike.com/hr/w/air-force-1-shoes-5sj3yzy7ok" target="_self" aria-label="Air Force 1" type="button" data-actiontext="Air Force 1" data-analytics-action-id="a34f17f5-bb31-4399-a056-ccb6124c731e" data-analytics-allow="false" data-button-type="button" data-click-mod="6a0cae0bf2ca7819d94a52f21efba2c6b25d6eed193f5290b8fb18cc211b933f" data-click-mod-in-carousel="true" data-qa="cta-button" data-qa-card-id="670cc6e7-78a7-4048-83fd-87542a099c47" tabindex="0" style="vertical-align:top;color:rgb(17, 17, 17);z-index:1;margin-left:0px;margin-right:6px;margin-top:6px;max-width:100%;cursor:pointer;text-decoration:none;font-weight:500;font-family:'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;box-sizing:border-box;background-color:rgb(255, 255, 255);display:inline-flex;font:500 16px / 24px 'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;text-align:center;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;padding:6px 16px;min-height:34px;position:relative;overflow:hidden;transform:matrix(1, 0, 0, 1, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border:0px none rgb(17, 17, 17);border-radius:30px;outline:rgb(17, 17, 17) none 0px;">Air Force 1<span inert="" style="pointer-events: none;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:500 16px / 24px 'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;display:block;position:absolute;width: 34px;height:34px;border-radius:30px;top:18px;left:55.9219px;background-color:rgba(255, 255, 255, 0.7);background-size:100%;transform:matrix(10, 0, 0, 10, -17, -17);transform-origin:17px 17px;opacity:0;transition:transform 0.8s, opacity 1s;"></span></a></div>
-                    </div>
-                </div><a data-qa="card-link" data-analytics-action-id="3cc96697-4339-4a05-b8af-6007abdfbd40" aria-label=" " tabindex="-1" href="https://www.nike.com/hr/w/air-force-1-shoes-5sj3yzy7ok" target="_self" style="position:absolute;width: 100%;height:300px;top:0px;left:0px;background-color:rgba(0, 0, 0, 0);color:rgb(17, 17, 17);cursor:pointer;text-decoration:none;font-weight:500;font-family:'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;box-sizing:border-box;"></a>
-            </figure>
-        </li>
-        <li data-index="1" aria-hidden="false" index="1" slidenumber="2" slidecount="9" style="flex:0 0 calc(33.3333% - 24px);margin:0px 12px 0px 0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;--column-offset: 20px;color:rgb(17, 17, 17);flex-flow:column nowrap;min-width: auto;scroll-snap-align:start;">
-            <figure data-analytics-placement-id="a9a6818e-ac28-4615-9e02-ffa0d51ebb26_2" data-analytics-has-landmark="true" data-asset-id="7cc8d3dc-56e8-4e6c-83c6-87e1a5b865cd" data-click-mod="6016d51b89163b7a37405caa8fcbc0d42592b011e9552c46c840e7d34db28796" data-is-carousel-content="true" data-index="1" data-collection-id="a9a6818e-ac28-4615-9e02-ffa0d51ebb26" data-item-count="9" data-qa="filmstrip-card" data-action-hashkeys="c4b93adbcf08efbe15ffcc57cfe9a8636f7a7e85ef709289f5825b2843afad2c" style="margin:0px;position:relative;min-width:300px;box-sizing:border-box;">
-                <div orientation="landscape" data-qa="image-wrapper" style="width: 100%;height: auto;overflow:hidden;min-height:300px;margin:0px;padding:0px;position:relative;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;aspect-ratio:1.46517 / 1;">
-                    <div style="margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;position:absolute;height:300px;width: 100%;">
-                        <div data-qa="image-media" style="height: 100%; width: 100%;width: 100%;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;" data-requested-width="409" data-requested-height="409" data-is-portrait-image-requested="false"><img data-qa="image-media-img" alt="Nike. Just Do It" src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_409,c_limit/7cc8d3dc-56e8-4e6c-83c6-87e1a5b865cd/nike-just-do-it.png" data-landscape-url="https://static.nike.com/a/images/f_auto,cs_srgb/w_1920,c_limit/7cc8d3dc-56e8-4e6c-83c6-87e1a5b865cd/nike-just-do-it.png" data-portrait-url="https://static.nike.com/a/images/f_auto,cs_srgb/w_960,c_limit/451c0c77-2fab-4f84-8d6b-86c3552bb85e/nike-just-do-it.png" data-image-loaded-class="guL_1FMX" style="min-height:300px;opacity:1;display:block;width: 100%;height:300px;object-fit:cover;transition:opacity 0.5s 0.3s;object-position:50% 50%;max-width:100%;box-sizing:border-box;border-style:none;" /></div>
-                    </div>
-                </div>
-                <div data-qa="card-overlay" style="left:48px;top:152px;height:99.9844px;width: calc(100% - 48px);justify-content:flex-end;text-align:left;pointer-events:none;box-sizing:border-box;margin:0px;padding:0px;position:absolute;overflow-wrap:break-word;display:flex;flex-direction:column;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;">
-                    <div data-qa="card-overlay-content" style="margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;">
-                        <div data-qa="cta-container" style="display:inline-block;pointer-events: auto;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;"><a href="https://www.nike.com/hr/w/air-max-shoes-a6d8hzy7ok" target="_self" aria-label="Air Max" type="button" data-actiontext="Air Max" data-analytics-action-id="a10d50ec-63ad-470a-b442-21ff48e84154" data-analytics-allow="false" data-button-type="button" data-click-mod="c4b93adbcf08efbe15ffcc57cfe9a8636f7a7e85ef709289f5825b2843afad2c" data-click-mod-in-carousel="true" data-qa="cta-button" data-qa-card-id="8fe3191d-3246-48e3-846d-e9e9ead91862" tabindex="0" style="vertical-align:top;color:rgb(17, 17, 17);z-index:1;margin-left:0px;margin-right:6px;margin-top:6px;max-width:100%;cursor:pointer;text-decoration:none;font-weight:500;font-family:'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;box-sizing:border-box;background-color:rgb(255, 255, 255);display:inline-flex;font:500 16px / 24px 'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;text-align:center;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;padding:6px 16px;min-height:34px;position:relative;overflow:hidden;transform:matrix(1, 0, 0, 1, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border:0px none rgb(17, 17, 17);border-radius:30px;outline:rgb(17, 17, 17) none 0px;">Air Max<span inert="" style="pointer-events: none;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:500 16px / 24px 'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;display:block;position:absolute;width: 34px;height:34px;border-radius:30px;top:18px;left:44.5781px;background-color:rgba(255, 255, 255, 0.7);background-size:100%;transform:matrix(10, 0, 0, 10, -17, -17);transform-origin:17px 17px;opacity:0;transition:transform 0.8s, opacity 1s;"></span></a></div>
-                    </div>
-                </div><a data-qa="card-link" data-analytics-action-id="15320d16-e2b2-44db-9162-f634fdf9b577" aria-label=" " tabindex="-1" href="https://www.nike.com/hr/w/air-max-shoes-a6d8hzy7ok" target="_self" style="position:absolute;width: 100%;height:300px;top:0px;left:0px;background-color:rgba(0, 0, 0, 0);color:rgb(17, 17, 17);cursor:pointer;text-decoration:none;font-weight:500;font-family:'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;box-sizing:border-box;"></a>
-            </figure>
-        </li>
-        <li data-index="2" aria-hidden="false" index="2" slidenumber="3" slidecount="9" style="flex:0 0 calc(33.3333% - 24px);margin:0px 12px 0px 0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;--column-offset: 20px;color:rgb(17, 17, 17);flex-flow:column nowrap;min-width: auto;scroll-snap-align:start;">
-            <figure data-analytics-placement-id="a9a6818e-ac28-4615-9e02-ffa0d51ebb26_3" data-analytics-has-landmark="true" data-asset-id="e9097b94-cc80-4316-9cf2-dee76a1b0b52" data-click-mod="0a15a5327d41bfad78ec9ecfea545fc746acb52a99281563a1136abd2334d678" data-is-carousel-content="true" data-index="2" data-collection-id="a9a6818e-ac28-4615-9e02-ffa0d51ebb26" data-item-count="9" data-qa="filmstrip-card" data-action-hashkeys="1342afc867b8eff74c992f839578a491d9bba8d5c577f8cc3747c0fed5c0f1d6" style="margin:0px;position:relative;min-width:300px;box-sizing:border-box;">
-                <div orientation="landscape" data-qa="image-wrapper" style="width: 100%;height: auto;overflow:hidden;min-height:300px;margin:0px;padding:0px;position:relative;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;aspect-ratio:1.46517 / 1;">
-                    <div style="margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;position:absolute;height:300px;width: 100%;">
-                        <div data-qa="image-media" style="height: 100%; width: 100%;width: 100%;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;" data-requested-width="409" data-requested-height="409" data-is-portrait-image-requested="false"><img data-qa="image-media-img" alt="Nike. Just Do It" src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_409,c_limit/e9097b94-cc80-4316-9cf2-dee76a1b0b52/nike-just-do-it.png" data-landscape-url="https://static.nike.com/a/images/f_auto,cs_srgb/w_1920,c_limit/e9097b94-cc80-4316-9cf2-dee76a1b0b52/nike-just-do-it.png" data-portrait-url="https://static.nike.com/a/images/f_auto,cs_srgb/w_960,c_limit/ef3f4554-3346-4e2e-b996-32acb060697e/nike-just-do-it.png" data-image-loaded-class="guL_1FMX" style="min-height:300px;opacity:1;display:block;width: 100%;height:300px;object-fit:cover;transition:opacity 0.5s 0.3s;object-position:50% 50%;max-width:100%;box-sizing:border-box;border-style:none;" /></div>
-                    </div>
-                </div>
-                <div data-qa="card-overlay" style="left:48px;top:152px;height:99.9844px;width: calc(100% - 48px);justify-content:flex-end;text-align:left;pointer-events:none;box-sizing:border-box;margin:0px;padding:0px;position:absolute;overflow-wrap:break-word;display:flex;flex-direction:column;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;">
-                    <div data-qa="card-overlay-content" style="margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;">
-                        <div data-qa="cta-container" style="display:inline-block;pointer-events: auto;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:16px / 28px 'Helvetica Now Text', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;"><a href="https://www.nike.com/hr/w/nike-p-6000-shoes-4ff6czy7ok" target="_self" aria-label="P-6000" type="button" data-actiontext="P-6000" data-analytics-action-id="32ebe5c2-197a-48a3-9f46-334025c74a78" data-analytics-allow="false" data-button-type="button" data-click-mod="1342afc867b8eff74c992f839578a491d9bba8d5c577f8cc3747c0fed5c0f1d6" data-click-mod-in-carousel="true" data-qa="cta-button" data-qa-card-id="2bf92a05-01b2-40d7-83af-79d856e36473" tabindex="0" style="vertical-align:top;color:rgb(17, 17, 17);z-index:1;margin-left:0px;margin-right:6px;margin-top:6px;max-width:100%;cursor:pointer;text-decoration:none;font-weight:500;font-family:'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;box-sizing:border-box;background-color:rgb(255, 255, 255);display:inline-flex;font:500 16px / 24px 'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;text-align:center;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;padding:6px 16px;min-height:34px;position:relative;overflow:hidden;transform:matrix(1, 0, 0, 1, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border:0px none rgb(17, 17, 17);border-radius:30px;outline:rgb(17, 17, 17) none 0px;">P-6000<span inert="" style="pointer-events: none;margin:0px;padding:0px;border:0px none rgb(17, 17, 17);font:500 16px / 24px 'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;vertical-align:baseline;box-sizing:border-box;display:block;position:absolute;width: 34px;height:34px;border-radius:30px;top:18px;left:44.7969px;background-color:rgba(255, 255, 255, 0.7);background-size:100%;transform:matrix(10, 0, 0, 10, -17, -17);transform-origin:17px 17px;opacity:0;transition:transform 0.8s, opacity 1s;"></span></a></div>
-                    </div>
-                </div><a data-qa="card-link" data-analytics-action-id="37c01b53-ecc2-4115-b361-aab3722eba07" aria-label=" " tabindex="-1" href="https://www.nike.com/hr/w/nike-p-6000-shoes-4ff6czy7ok" target="_self" style="position:absolute;width: 100%;height:300px;top:0px;left:0px;background-color:rgba(0, 0, 0, 0);color:rgb(17, 17, 17);cursor:pointer;text-decoration:none;font-weight:500;font-family:'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;box-sizing:border-box;"></a>
-            </figure>
-        </li>
+  </header>
 
-    </ul>
-</section>
+  <main id="spapp" role="main">
+    <section id="view_main"></section>
+    <section id="view_men"></section>
+    <section id="view_kids"></section>
+    <section id="view_women"></section>
+    <section id="view_login"></section>
+    <section id="view_signup"></section>
+    <section id="view_item"></section>
 
 
+  </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="border-t border-zinc-200/70 bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-8 text-sm text-zinc-600 md:px-8">
+      <p>© <span id="year"></span> Sneakers Co.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-brand-700">Privacy</a>
+        <a href="#" class="hover:text-brand-700">Terms</a>
+        <a href="#" class="hover:text-brand-700">Support</a>
+      </div>
+    </div>
+  </footer>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
+
+
+  <script src="./js/itemview.js"></script>
+  <script src="./js/jquery.spapp.js"></script>
+  <script src="./js/jquery.spapp.min.js"></script>
+  <script src="./js/custom.js""></script>
+  <script src="./js/tailwindconfig.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
