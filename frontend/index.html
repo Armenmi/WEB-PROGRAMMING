@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sneakers — New Arrivals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <style>
+    :root {
+      --ring: rgba(239, 68, 68, 0.25);
+    }
+    /* Smooth images */
+    img { image-rendering: auto; }
+  </style>
+</head>
+<body class="font-inter bg-white text-zinc-900 antialiased">
+
+  <div class="fixed inset-0 -z-10 bg-red-glow pointer-events-none"></div>
+
+  <header class="sticky top-0 z-40 w-full border-b border-zinc-200/70 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-7xl items-center px-6 md:px-8">
+      <a class="mr-6 inline-flex items-center gap-2" href="#">
+        <img src="./static/logo.png" class="h-10 w-10 rounded-md shadow-soft" alt="Logo">
+      </a>
+
+      <nav class="hidden w-full  md:block">
+        <ul class="flex items-center justify-center gap-4 font-semibold text-zinc-800">
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_main">Home</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_men">Men</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_women">Women</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_kids">Kids</a></li>
+        </ul>
+      </nav>
+
+      <p class="font-semibold">
+        <a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#view_login">
+
+          Login
+        </a>
+      </p>
+    </div>
+  </header>
+
+  <main id="spapp" role="main">
+    <section id="view_main"></section>
+    <section id="view_men"></section>
+    <section id="view_kids"></section>
+    <section id="view_women"></section>
+    <section id="view_login"></section>
+    <section id="view_signup"></section>
+    <section id="view_item"></section>
+
+
+  </main>
+
+  <footer class="border-t border-zinc-200/70 bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-8 text-sm text-zinc-600 md:px-8">
+      <p>© <span id="year"></span> Sneakers Co.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-brand-700">Privacy</a>
+        <a href="#" class="hover:text-brand-700">Terms</a>
+        <a href="#" class="hover:text-brand-700">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
+
+
+  <script src="./js/itemview.js"></script>
+  <script src="./js/jquery.spapp.js"></script>
+  <script src="./js/jquery.spapp.min.js"></script>
+  <script src="./js/custom.js""></script>
+  <script src="./js/tailwindconfig.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

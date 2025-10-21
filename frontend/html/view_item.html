@@ -1,0 +1,227 @@
+<section id="view_item" class="min-h-screen bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-10 md:px-8">
+      <!-- Breadcrumbs -->
+      <nav class="mb-6 text-sm text-zinc-600">
+        <a href="#men" class="hover:text-red-700">Men</a>
+        <span class="mx-2">/</span>
+        <a href="#men" class="hover:text-red-700">Sneakers</a>
+        <span class="mx-2">/</span>
+        <span class="font-semibold text-zinc-900">Nike Air Max Plus</span>
+      </nav>
+  
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+        <!-- Gallery -->
+        <div>
+          <div class="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-4 shadow-sm">
+            <img id="mainImage"
+                 src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/877d30e7-4880-46f8-aa71-6704eb7d944d/AIR+MAX+PLUS.png"
+                 alt="Nike Air Max Plus"
+                 class="mx-auto h-[420px] w-full object-contain" />
+            <span class="absolute left-5 top-5 rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white shadow-sm">New</span>
+          </div>
+  
+          <!-- Thumbnails -->
+          <div class="mt-4 grid grid-cols-4 gap-3">
+            <button data-src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/877d30e7-4880-46f8-aa71-6704eb7d944d/AIR+MAX+PLUS.png"
+                    class="thumb group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-2 hover:border-zinc-300">
+              <img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/877d30e7-4880-46f8-aa71-6704eb7d944d/AIR+MAX+PLUS.png"
+                   class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+            </button>
+  
+            <!-- Duplicate the same img for demo; replace with real alternates -->
+            <button data-src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/58d3f4a3-3f98-43e7-8a3f-d2d0a6b3a0e4/air-max-plus.jpg"
+                    class="thumb group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-2 hover:border-zinc-300">
+              <img src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/58d3f4a3-3f98-43e7-8a3f-d2d0a6b3a0e4/air-max-plus.jpg"
+                   class="h-20 w-full object-cover transition group-hover:scale-[1.03]" alt="">
+            </button>
+  
+            <button data-src="https://static.nike.com/a/images/t_default/1f42d0f2-5b8a-4f2e-af31-8b44a68f9d42/air-max-plus-shoes.png"
+                    class="thumb group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-2 hover:border-zinc-300">
+              <img src="https://static.nike.com/a/images/t_default/1f42d0f2-5b8a-4f2e-af31-8b44a68f9d42/air-max-plus-shoes.png"
+                   class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+            </button>
+  
+            <button data-src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9a3e3ab2-7d25-4a42-8c3c-7f3e6f79f71c/air-max-plus-shoes.png"
+                    class="thumb group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-2 hover:border-zinc-300">
+              <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9a3e3ab2-7d25-4a42-8c3c-7f3e6f79f71c/air-max-plus-shoes.png"
+                   class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+            </button>
+          </div>
+        </div>
+  
+        <!-- Sticky summary -->
+        <aside class="lg:sticky lg:top-24">
+          <div class="overflow-hidden rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm ring-1 ring-transparent hover:ring-[rgba(239,68,68,.25)] transition">
+            <div class="flex items-start justify-between gap-6">
+              <div>
+                <h1 class="text-2xl font-extrabold text-zinc-900 md:text-3xl">Nike Air Max Plus</h1>
+                <p class="mt-1 text-zinc-600">Men’s Shoes</p>
+              </div>
+              <button id="wishBtn" class="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-800 hover:border-zinc-300">
+                ♥
+              </button>
+            </div>
+  
+            <!-- Rating -->
+            <div class="mt-3 flex items-center gap-3 text-sm">
+              <div class="flex items-center gap-0.5 text-yellow-500" aria-label="4.6 out of 5 stars">
+                ★★★★☆
+              </div>
+              <span class="text-zinc-500">(128 reviews)</span>
+            </div>
+  
+            <!-- Price -->
+            <div class="mt-4 flex items-baseline gap-3">
+              <p class="text-3xl font-extrabold text-zinc-900">$399.99</p>
+              <span class="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-700">Free Shipping</span>
+            </div>
+  
+            <!-- Colors -->
+            <div class="mt-6">
+              <p class="mb-2 text-sm font-medium text-zinc-800">Color</p>
+              <div id="colorGroup" class="flex flex-wrap gap-2">
+                <button data-color="Crimson" class="color-opt h-9 w-9 rounded-full border-2 border-transparent bg-red-600 ring-2 ring-red-600/30 hover:ring-red-600"></button>
+                <button data-color="Black" class="color-opt h-9 w-9 rounded-full border-2 border-transparent bg-black ring-2 ring-zinc-300 hover:ring-zinc-400"></button>
+                <button data-color="White" class="color-opt h-9 w-9 rounded-full border-2 border-zinc-200 bg-white ring-2 ring-zinc-200 hover:ring-zinc-300"></button>
+              </div>
+            </div>
+  
+            <!-- Sizes -->
+            <div class="mt-6">
+              <div class="mb-2 flex items-center justify-between">
+                <p class="text-sm font-medium text-zinc-800">Size (EU)</p>
+                <a href="#size-guide" class="text-xs font-semibold text-red-700 hover:underline">Size guide</a>
+              </div>
+              <div id="sizeGroup" class="grid grid-cols-4 gap-2">
+                <!-- Add/remove sizes as needed -->
+                <button class="size-opt rounded-xl border border-zinc-200 bg-white px-0 py-2 text-sm font-semibold text-zinc-900 hover:border-zinc-300">41</button>
+                <button class="size-opt rounded-xl border border-zinc-200 bg-white px-0 py-2 text-sm font-semibold text-zinc-900 hover:border-zinc-300">42</button>
+                <button class="size-opt rounded-xl border border-zinc-200 bg-white px-0 py-2 text-sm font-semibold text-zinc-900 hover:border-zinc-300">43</button>
+                <button class="size-opt rounded-xl border border-zinc-200 bg-white px-0 py-2 text-sm font-semibold text-zinc-900 hover:border-zinc-300">44</button>
+                <button class="size-opt rounded-xl border border-zinc-200 bg-white px-0 py-2 text-sm font-semibold text-zinc-900 hover:border-zinc-300">45</button>
+                <button class="size-opt rounded-xl border border-zinc-200 bg-white px-0 py-2 text-sm font-semibold text-zinc-900 hover:border-zinc-300">46</button>
+              </div>
+            </div>
+  
+            <!-- Quantity + CTA -->
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <div class="flex items-center rounded-xl border border-zinc-200 bg-white">
+                <button id="qtyDec" class="h-11 w-11 rounded-l-xl text-lg hover:bg-zinc-50">−</button>
+                <input id="qty" type="number" min="1" value="1" class="h-11 w-14 border-x border-zinc-200 text-center outline-none" />
+                <button id="qtyInc" class="h-11 w-11 rounded-r-xl text-lg hover:bg-zinc-50">+</button>
+              </div>
+              <button id="addCart"
+                class="inline-flex h-11 flex-1 items-center justify-center rounded-2xl bg-red-600 px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-red-700/10 transition hover:bg-red-700 active:scale-[0.98]">
+                Add to Cart
+              </button>
+              <button
+                class="inline-flex h-11 flex-1 items-center justify-center rounded-2xl border border-zinc-200 bg-white px-6 text-sm font-semibold text-zinc-900 transition hover:border-zinc-300 hover:shadow-sm">
+                Buy Now
+              </button>
+            </div>
+  
+            <!-- Badges -->
+            <div class="mt-6 flex flex-wrap items-center gap-2">
+              <span class="rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-700">30-day returns</span>
+              <span class="rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-700">2-year warranty</span>
+              <span class="rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-700">Carbon neutral shipping</span>
+            </div>
+  
+            <!-- Accordions -->
+            <div class="mt-8 divide-y divide-zinc-200 rounded-2xl border border-zinc-200">
+              <details class="group p-4 open:bg-zinc-50">
+                <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-zinc-900">
+                  Description
+                  <span class="ml-2 text-zinc-400 group-open:rotate-180 transition">⌃</span>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-700">
+                  The Nike Air Max Plus reimagines late-‘90s style with Tuned Air cushioning and bold gradients.
+                  Breathable mesh upper, supportive overlays, and durable rubber outsole for all-day comfort.
+                </p>
+              </details>
+              <details class="group p-4 open:bg-zinc-50">
+                <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-zinc-900">
+                  Shipping & Returns
+                  <span class="ml-2 text-zinc-400 group-open:rotate-180 transition">⌃</span>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-700">
+                  Free standard shipping. Returns accepted within 30 days in new condition. Some exclusions apply.
+                </p>
+              </details>
+              <details class="group p-4 open:bg-zinc-50">
+                <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-zinc-900">
+                  Materials & Care
+                  <span class="ml-2 text-zinc-400 group-open:rotate-180 transition">⌃</span>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-700">
+                  Upper: mesh/synthetic overlays. Lining: textile. Outsole: rubber. Spot clean with mild soap.
+                </p>
+              </details>
+            </div>
+          </div>
+        </aside>
+      </div>
+  
+      <!-- Related -->
+      <div class="mt-14">
+        <h2 class="mb-4 text-xl font-extrabold text-zinc-900">You might also like</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Sample related card -->
+          <article class="group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+            <img src="https://static.nike.com/a/images/t_default/1f42d0f2-5b8a-4f2e-af31-8b44a68f9d42/air-max-plus-shoes.png"
+                 class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+            <div class="mt-3">
+              <p class="text-sm font-semibold text-zinc-900">Air Max Plus (Black)</p>
+              <p class="text-sm text-zinc-600">$389.99</p>
+            </div>
+            <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-200 bg-white text-sm font-semibold text-zinc-900 hover:border-zinc-300">
+              View
+            </a>
+          </article>
+  
+          <!-- Duplicate with different images/titles as needed -->
+          <article class="group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9a3e3ab2-7d25-4a42-8c3c-7f3e6f79f71c/air-max-plus-shoes.png"
+                 class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+            <div class="mt-3">
+              <p class="text-sm font-semibold text-zinc-900">Air Max Plus (White)</p>
+              <p class="text-sm text-zinc-600">$379.99</p>
+            </div>
+            <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-200 bg-white text-sm font-semibold text-zinc-900 hover:border-zinc-300">
+              View
+            </a>
+          </article>
+  
+          <article class="group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+            <img src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/58d3f4a3-3f98-43e7-8a3f-d2d0a6b3a0e4/air-max-plus.jpg"
+                 class="mx-auto h-40 w-full object-cover transition group-hover:scale-[1.03]" alt="">
+            <div class="mt-3">
+              <p class="text-sm font-semibold text-zinc-900">Air Max Plus (Crimson)</p>
+              <p class="text-sm text-zinc-600">$399.99</p>
+            </div>
+            <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-200 bg-white text-sm font-semibold text-zinc-900 hover:border-zinc-300">
+              View
+            </a>
+          </article>
+  
+          <article class="group overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+            <img src="https://static.nike.com/a/images/t_default/1f42d0f2-5b8a-4f2e-af31-8b44a68f9d42/air-max-plus-shoes.png"
+                 class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+            <div class="mt-3">
+              <p class="text-sm font-semibold text-zinc-900">Air Max Plus (Volt)</p>
+              <p class="text-sm text-zinc-600">$389.99</p>
+            </div>
+            <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-200 bg-white text-sm font-semibold text-zinc-900 hover:border-zinc-300">
+              View
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Toast -->
+    <div id="itemToast" class="pointer-events-none fixed inset-x-0 bottom-6 z-50 mx-auto hidden w-fit rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 shadow-md">
+      Added to cart
+    </div>
+  </section>
+  

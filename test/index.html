@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sneakers — New Arrivals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <style>
+    :root {
+      --ring: rgba(239, 68, 68, 0.25);
+    }
+    /* Smooth images */
+    img { image-rendering: auto; }
+  </style>
+</head>
+<body class="font-inter bg-white text-zinc-900 antialiased">
+
+  <div class="fixed inset-0 -z-10 bg-red-glow pointer-events-none"></div>
+
+  <header class="sticky top-0 z-40 w-full border-b border-zinc-200/70 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-7xl items-center px-6 md:px-8">
+      <a class="mr-6 inline-flex items-center gap-2" href="#">
+        <img src="./static/logo.png" class="h-10 w-10 rounded-md shadow-soft" alt="Logo">
+      </a>
+
+      <nav class="hidden w-full  md:block">
+        <ul class="flex items-center justify-center gap-4 font-semibold text-zinc-800">
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#">Men</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#">Women</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#">Kids</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-700 transition" href="#">Sportswear</a></li>
+        </ul>
+      </nav>
+
+      <p class="font-semibold">Login</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative mt-8">
+      <div class="relative mx-auto max-w-7xl px-0 md:px-8">
+        <div class="relative overflow-hidden rounded-3xl">
+          <img src="./static/landing.jpg" class="h-[52vh] w-full object-cover md:h-[64vh]" alt="Landing">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+          <div class="absolute left-6 top-6 md:left-16 md:top-16">
+            <div class="flex max-w-xl flex-col items-start gap-5">
+              <p class="text-4xl font-extrabold leading-tight text-white md:text-6xl drop-shadow">
+                New Arrivals
+              </p>
+              <p class="text-zinc-100/90 text-lg md:text-xl">
+                Ready for the autumn season?
+              </p>
+              <div class="flex flex-wrap items-center gap-3">
+                <a href="#collections" class="inline-flex h-12 items-center justify-center rounded-2xl bg-brand-600 px-6 font-semibold text-white shadow-soft ring-1 ring-brand-700/10 hover:bg-brand-700 active:scale-[0.98] transition">
+                  Shop Now
+                </a>
+                <a href="#collections" class="inline-flex h-12 items-center justify-center rounded-2xl border border-white/70 bg-white/10 px-6 font-semibold text-white backdrop-blur hover:bg-white/20 active:scale-[0.98] transition">
+                  Explore
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections" class="mx-auto mt-16 max-w-7xl px-6 md:mt-24 md:px-8">
+      <div class="flex flex-col gap-3">
+        <h2 class="text-3xl font-bold md:text-5xl">Our collections</h2>
+        <p class="max-w-3xl text-lg leading-relaxed text-zinc-700">
+          You've got options with our shoes. Browse casual sneakers, high-performance runners, and comfy post-workout slides.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-10 max-w-7xl px-6 md:px-8">
+      <div class="relative mb-16 flex flex-col items-center justify-center gap-10  bg-white p-6 transition md:flex-row md:p-10">
+        <div class="w-full md:w-1/2">
+          <div class="relative">
+            <span class="absolute left-3 top-3 rounded-full bg-brand-500/90 px-3 py-1 text-xs font-semibold text-white shadow-soft">Trending</span>
+            <img src="./static/shoe-removebg-preview.png" class="w-full object-contain" alt="Adidas Gazelle">
+          </div>
+        </div>
+        <div class="flex w-full flex-col items-start justify-center gap-6 md:w-1/2">
+          <div class="flex flex-col gap-2">
+            <p class="text-3xl font-bold md:text-5xl">Adidas Gazelle</p>
+            <p class="text-zinc-700">
+              Wear the hottest shoes in the room. Red Gazelle adidas sneakers add a glow to any outfit.
+              Sought out by athletes and trendsetters for more than 50 years.
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <button class="inline-flex h-12 items-center justify-center rounded-2xl bg-brand-600 px-6 font-semibold text-white shadow-soft ring-1 ring-brand-700/10 hover:bg-brand-700 active:scale-[0.98] transition">
+              Add to Cart
+            </button>
+            <button class="inline-flex h-12 items-center justify-center rounded-2xl border border-zinc-200 bg-white px-6 font-semibold text-zinc-900 hover:border-zinc-300 hover:shadow-sm active:scale-[0.98] transition">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mb-24 flex flex-col-reverse items-center justify-center gap-10 rounded-3xl  p-6  transition md:flex-row md:p-10">
+        <div class="flex w-full flex-col items-start justify-center gap-6 md:w-1/2">
+          <div class="flex flex-col gap-2">
+            <p class="text-3xl font-bold md:text-5xl">Air Jordan 1</p>
+            <p class="text-zinc-700">
+              <span class="font-semibold">Step into legend.</span>
+              Air Jordan 1s turn every stride into a statement with timeless style and unmatched attitude —
+              elevating any look on the court or in the street. Worn by those who set trends, not follow them.
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <button class="inline-flex h-12 items-center justify-center rounded-2xl bg-brand-600 px-6 font-semibold text-white shadow-soft ring-1 ring-brand-700/10 hover:bg-brand-700 active:scale-[0.98] transition">
+              Add to Cart
+            </button>
+            <button class="inline-flex h-12 items-center justify-center rounded-2xl border border-zinc-200 bg-white px-6 font-semibold text-zinc-900 hover:border-zinc-300 hover:shadow-sm active:scale-[0.98] transition">
+              View Colors
+            </button>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2">
+          <div class="relative">
+            <span class="absolute right-3 top-3 rounded-full bg-black/80 px-3 py-1 text-xs font-semibold text-white">Icon</span>
+            <img src="./static/airjordan-Photoroom.png" class="w-full -scale-x-100 object-contain" alt="Air Jordan 1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto mb-28 max-w-7xl px-6 md:px-8">
+      <div class="overflow-hidden rounded-3xl border border-zinc-200/70 bg-gradient-to-r from-brand-600 to-brand-700 p-10 text-white shadow-soft">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <h3 class="text-2xl font-bold md:text-3xl">Don’t miss the next drop</h3>
+            <p class="mt-1 text-white/90">Early access, exclusive colors, members-only pricing.</p>
+          </div>
+          <div class="flex gap-3">
+            <input type="email" placeholder="Enter your email" class="h-12 w-64 rounded-2xl border border-white/30 bg-white/10 px-4 text-white placeholder-white/70 outline-none backdrop-blur focus:bg-white/15 focus:ring-2 focus:ring-white/60">
+            <button class="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 font-semibold text-brand-700 hover:bg-zinc-100 active:scale-[0.98] transition">
+              Notify Me
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-zinc-200/70 bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-8 text-sm text-zinc-600 md:px-8">
+      <p>© <span id="year"></span> Sneakers Co.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-brand-700">Privacy</a>
+        <a href="#" class="hover:text-brand-700">Terms</a>
+        <a href="#" class="hover:text-brand-700">Support</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="."></script>
+
+
+  <script src="./js/tailwindconfig.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
