@@ -1,0 +1,8 @@
+{
+    "name": "root/armen-mili-web-project",
+    "description": "My web project",
+    "require": {
+        "zircote/swagger-php": "3.3.7",
+        "flightphp/core": "^3.17"
+    }
+}
