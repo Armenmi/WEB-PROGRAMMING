@@ -11,7 +11,4 @@ class UserDao extends BaseDao
     {
         parent::__construct($this->table_name);
     }
-    
 }
-
-?>

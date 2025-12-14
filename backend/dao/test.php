@@ -11,3 +11,4 @@ $adminDao = new AdminDao();
 
 
 
+print_r($productDao->getMenProducts());
