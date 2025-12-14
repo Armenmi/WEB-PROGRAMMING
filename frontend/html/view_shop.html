@@ -1,0 +1,171 @@
+<section id="view_shop" class="min-h-screen bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-8 md:px-8">
+        <!-- Page header -->
+        <div class="mb-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-extrabold tracking-tight text-zinc-900 md:text-4xl" id="category-title">
+                    Shop
+                </h1>
+                <p class="mt-1 text-zinc-600">
+                    Classics, performance, and everyday essentials — curated for the season.
+                </p>
+            </div>
+
+
+        </div>
+
+        <div class="flex items-start justify-between md:grid-cols-[16rem_1fr]">
+            <!-- Sidebar -->
+            <aside class="h-fit w-1/3 mr-12 rounded-2xl border border-zinc-200 bg-white p-4 md:sticky md:top-20">
+                <p class="mb-3 text-2xl font-semibold text-zinc-900 pb-2">Categories</p>
+
+                <div class="w-full mb-6">
+                    <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Gender</p>
+                    <ul class="space-y-2 text-sm" id="gender-filter">
+                        <li>
+                            <a href="#" data-gender="men" onclick="ProductService.getMenProducts()"
+                                class="gender-link flex items-center justify-between rounded-xl px-3 py-2 font-medium text-zinc-800 hover:bg-zinc-50 transition">
+
+                                Men
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-gender="women" onclick="ProductService.getWomenProducts()"
+                                class="gender-link flex items-center justify-between rounded-xl px-3 py-2 font-medium text-zinc-800 hover:bg-zinc-50 transition">
+                                Women
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-gender="kids" onclick="ProductService.getKidsProducts()"
+                                class="gender-link flex items-center justify-between rounded-xl px-3 py-2 font-medium text-zinc-800 hover:bg-zinc-50 transition">
+                                Kids
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </aside>
+
+            <!-- Product grid -->
+            <div class="w-full">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" id="product-grid">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toast-container" class="fixed top-6 right-6 z-50 flex flex-col gap-2 pointer-events-none">
+        <!-- Toasts will be inserted here -->
+    </div>
+</section>
+
+
+
+<style>
+    .toast {
+        pointer-events: auto;
+        animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-in 2.7s;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
+
+<script>
+
+    const Toast = {
+        show: function (message, type = 'success') {
+            const container = document.getElementById('toast-container');
+
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center gap-3 rounded-2xl bg-white px-5 py-3 shadow-lg ring-1 ${type === 'success' ? 'ring-red-600/10' : 'ring-zinc-200'
+                }`;
+
+            toast.innerHTML = `
+        <div class="flex h-8 w-8 items-center justify-center rounded-full ${type === 'success' ? 'bg-red-600' : 'bg-zinc-800'
+                }">
+          ${type === 'success'
+                    ? '<svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>'
+                    : '<svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+                }
+        </div>
+        <p class="text-sm font-semibold text-zinc-900">${message}</p>
+      `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+    };
+
+
+    const genderLinks = document.querySelectorAll('.gender-link');
+    const typeLinks = document.querySelectorAll('.type-link');
+    const categoryTitle = document.getElementById('category-title');
+
+    let currentGender = null;
+    let currentType = 'sneakers';
+
+    genderLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const gender = link.dataset.gender;
+            currentGender = gender;
+
+            genderLinks.forEach(l => {
+                l.classList.remove('bg-red-600', 'text-white', 'shadow-sm', 'border-transparent');
+                l.classList.add('text-zinc-800');
+            });
+
+            link.classList.add('bg-red-600', 'text-white', 'shadow-sm', 'border-transparent');
+            link.classList.remove('text-zinc-800');
+
+            categoryTitle.textContent = gender.charAt(0).toUpperCase() + gender.slice(1);
+        });
+    });
+
+    typeLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const type = link.dataset.type;
+            currentType = type;
+
+            typeLinks.forEach(l => {
+                l.classList.remove('bg-red-600', 'text-white', 'shadow-sm', 'border-transparent');
+                l.classList.add('text-zinc-800');
+                const badge = l.querySelector('span');
+                badge.classList.remove('bg-white/20');
+                badge.classList.add('bg-zinc-100', 'text-zinc-700');
+            });
+
+            link.classList.add('bg-red-600', 'text-white', 'shadow-sm', 'border-transparent');
+            link.classList.remove('text-zinc-800');
+            const badge = link.querySelector('span');
+            badge.classList.add('bg-white/20');
+            badge.classList.remove('bg-zinc-100', 'text-zinc-700');
+        });
+    });
+</script>

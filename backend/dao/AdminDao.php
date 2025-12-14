@@ -12,6 +12,20 @@ class AdminDao extends BaseDao
     }
 
 
+    public function getAllOrders()
+    {
+
+        $sql = "select * from orders o join order_items od on o.id = od.order_id";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
+
     public function getAllOrdersByUser($user_id)
     {
         $sql = "

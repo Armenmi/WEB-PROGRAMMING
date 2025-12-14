@@ -23,7 +23,8 @@ class ProductDao extends BaseDao
             product_details.id AS product_details_id,
             product_details.colors AS product_details_colors,
             product_details.sizes AS product_details_sizes,
-            product_details.models AS product_details_models
+            product_details.models AS product_details_models,
+            product_details.category AS product_details_category
         FROM category
         INNER JOIN products ON category.id = products.id
         INNER JOIN product_details ON products.id = product_details.product_id
@@ -40,27 +41,36 @@ class ProductDao extends BaseDao
     public function getProductById($product_id)
     {
         $sql = "
-        SELECT 
-            category.id AS category_id,
-            category.name AS category_name,
-            products.id AS product_id,
-            products.name AS product_name,
-            product_details.id AS product_details_id,
-            product_details.colors AS product_details_colors,
-            product_details.sizes AS product_details_sizes,
-            product_details.models AS product_details_models
-        FROM products
-        INNER JOIN product_details ON products.id = product_details.product_id
-        INNER JOIN category ON category.id = products.id
-        WHERE products.id = :product_id
+        SELECT
+            -- products
+            p.id           AS product_id,
+            p.name         AS product_name,
+            p.category_id  AS product_category_id,
+            p.price        AS product_price,
+
+            -- category
+            c.id           AS category_id,
+            c.name         AS category_name,
+
+            -- product_details
+            pd.id          AS product_details_id,
+            pd.colors,
+            pd.sizes,
+            pd.models,
+            pd.category    AS product_details_category
+        FROM products p
+        JOIN category c
+            ON c.id = p.category_id
+        LEFT JOIN product_details pd
+            ON pd.product_id = p.id
+        WHERE p.id = :product_id
     ";
 
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
         $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $result;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getProductByCategory($categoryName)
@@ -121,6 +131,114 @@ class ProductDao extends BaseDao
         $stmt->execute();
 
         // make sure we get associative keys (so aliases matter)
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public function getMenProducts()
+    {
+        $sql = "
+        SELECT
+            -- products
+            p.id           AS product_id,
+            p.name         AS product_name,
+            p.category_id  AS product_category_id,
+            p.price        AS product_price,
+
+            -- category
+            c.id           AS category_id,
+            c.name         AS category_name,
+
+            -- product_details
+            pd.id          AS product_details_id,
+            pd.colors,
+            pd.sizes,
+            pd.models,
+            pd.category    AS product_details_category
+        FROM products p
+        JOIN category c
+            ON c.id = p.category_id
+        LEFT JOIN product_details pd
+            ON pd.product_id = p.id
+        WHERE pd.category = 'men'
+        ORDER BY p.id
+    ";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public function getWomenProducts()
+    {
+        $sql = "
+        SELECT
+            -- products
+            p.id           AS product_id,
+            p.name         AS product_name,
+            p.category_id  AS product_category_id,
+            p.price        AS product_price,
+
+            -- category
+            c.id           AS category_id,
+            c.name         AS category_name,
+
+            -- product_details
+            pd.id          AS product_details_id,
+            pd.colors,
+            pd.sizes,
+            pd.models,
+            pd.category    AS product_details_category
+        FROM products p
+        JOIN category c
+            ON c.id = p.category_id
+        LEFT JOIN product_details pd
+            ON pd.product_id = p.id
+        WHERE pd.category = 'women'
+        ORDER BY p.id
+    ";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public function getKidsProducts()
+    {
+        $sql = "
+        SELECT
+            -- products
+            p.id           AS product_id,
+            p.name         AS product_name,
+            p.category_id  AS product_category_id,
+            p.price        AS product_price,
+
+            -- category
+            c.id           AS category_id,
+            c.name         AS category_name,
+
+            -- product_details
+            pd.id          AS product_details_id,
+            pd.colors,
+            pd.sizes,
+            pd.models,
+            pd.category    AS product_details_category
+        FROM products p
+        JOIN category c
+            ON c.id = p.category_id
+        LEFT JOIN product_details pd
+            ON pd.product_id = p.id
+        WHERE pd.category = 'kids'
+        ORDER BY p.id
+    ";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
