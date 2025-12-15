@@ -18,6 +18,11 @@ class AdminService extends BaseService
         return $this->dao->getAllOrdersByUser($user_id);
     }
 
+    public function getTotalStats()
+    {
+        return $this->dao->getTotalStats();
+    }
+
     public function getAllOrders()
     {
         return $this->dao->getAllOrders();

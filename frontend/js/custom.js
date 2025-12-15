@@ -51,6 +51,10 @@ app.route({
 });
 
 
+
+
+
+
 app.route({
   view: "view_signup",
   load: "view_signup.html",
@@ -82,5 +86,24 @@ app.route({
 
   }
 });
+
+const userToken = localStorage.getItem("user_token");
+
+if (userToken) {
+  try {
+    const token = jwt_decode(userToken);
+
+    if (token.user && token.user.is_admin == 1) {
+      app.route({
+        view: "view_admin",
+        load: "view_admin.html",
+      });
+    }
+  } catch (error) {
+    console.error("Invalid token found, clearing storage:", error);
+    localStorage.removeItem("user_token"); // Clean up bad token
+  }
+}
+
 
 app.run();

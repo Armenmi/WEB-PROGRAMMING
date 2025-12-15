@@ -237,7 +237,7 @@ let ProductService = {
         <button id="qtyInc" class="h-11 w-11 rounded-r-xl text-lg hover:bg-zinc-50">+</button>
       </div>
       <button id="addCart"   
-       onclick="Cart.addToCart({id: ${data.product_id}, name: '${data.product_name.replace(/'/g, "\\'")}', picture: '${data.image || ''}', price: ${data.product_price}, quantity: document.getElementById('qty').value}); Toast.show('Added to cart!')"
+       onclick="Cart.addToCart({id: ${data.product_id}, name: '${data.product_name.replace(/'/g, "\\'")}', picture: '${data.image || ''}', price: ${data.product_price}, quantity: document.getElementById('qty').value}); alert('Added ${data.product_name} cart!')"
         class="inline-flex h-11 flex-1 items-center justify-center rounded-2xl bg-red-600 px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-red-700/10 transition hover:bg-red-700 active:scale-[0.98]">
         Add to Cart
       </button>

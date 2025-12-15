@@ -14,15 +14,12 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
       <div class="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-md transition">
         <div class="text-sm font-medium text-zinc-600 mb-1">Total Orders</div>
-        <div class="text-3xl font-bold text-zinc-900">127</div>
+        <div class="text-3xl font-bold text-zinc-900" id="totalOrders">127</div>
       </div>
-      <div class="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-md transition">
-        <div class="text-sm font-medium text-zinc-600 mb-1">Pending</div>
-        <div class="text-3xl font-bold text-red-600">8</div>
-      </div>
+
       <div class="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-md transition">
         <div class="text-sm font-medium text-zinc-600 mb-1">Revenue</div>
-        <div class="text-3xl font-bold text-zinc-900">$12,450</div>
+        <div class="text-3xl font-bold text-zinc-900" id="totalRevenue">$12,450</div>
       </div>
     </div>
 
@@ -38,9 +35,11 @@
             <tr>
               <th class="px-6 py-3 text-left text-xs font-semibold text-zinc-700 uppercase tracking-wider">Order ID</th>
               <th class="px-6 py-3 text-left text-xs font-semibold text-zinc-700 uppercase tracking-wider">User ID</th>
-              <th class="px-6 py-3 text-left text-xs font-semibold text-zinc-700 uppercase tracking-wider">Product ID</th>
+              <th class="px-6 py-3 text-left text-xs font-semibold text-zinc-700 uppercase tracking-wider">Product ID
+              </th>
               <th class="px-6 py-3 text-left text-xs font-semibold text-zinc-700 uppercase tracking-wider">Quantity</th>
-              <th class="px-6 py-3 text-left text-xs font-semibold text-zinc-700 uppercase tracking-wider">Order Total</th>
+              <th class="px-6 py-3 text-left text-xs font-semibold text-zinc-700 uppercase tracking-wider">Order Total
+              </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-zinc-100">
@@ -55,5 +54,6 @@
 
 <script>
   NavbarService.__init();
+  AdminService.initializeTotalStats();
   AdminService.initializeOrdersTable();
 </script>

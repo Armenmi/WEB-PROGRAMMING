@@ -26,6 +26,21 @@ class AdminDao extends BaseDao
     }
 
 
+    public function getTotalStats()
+    {
+        $sql = "SELECT 
+                COUNT(*) as total_orders, 
+                COALESCE(SUM(order_total), 0) as total_revenue 
+            FROM orders";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+
     public function getAllOrdersByUser($user_id)
     {
         $sql = "

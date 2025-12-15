@@ -1,5 +1,41 @@
 let AdminService = {
 
+    initializeTotalStats: function () {
+        const token = localStorage.getItem('user_token');
+
+        fetch('http://localhost/web/backend/admin/stats', {
+            headers: {
+                'Authentication': token
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const ordersElement = document.getElementById('totalOrders');
+                const revenueElement = document.getElementById('totalRevenue');
+
+                // Define styles dynamically
+                const numberStyle = "font-size: 2.5rem !important; font-weight: 800 !important; line-height: 1.2 !important; letter-spacing: -1px !important;";
+
+                // Update Total Orders
+                if (ordersElement) {
+                    ordersElement.innerText = data.total_orders;
+                    ordersElement.style.cssText = numberStyle + " color: #111 !important;";
+                }
+
+                // Update Revenue
+                if (revenueElement) {
+                    const formattedRevenue = parseFloat(data.total_revenue).toLocaleString('en-US', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                    revenueElement.innerText = '$' + formattedRevenue;
+                    revenueElement.style.cssText = numberStyle + " color: #0d6efd !important;";
+                }
+            })
+            .catch(error => console.error('Error fetching stats:', error));
+    },
+
+
     initializeOrdersTable: function () {
         const token = localStorage.getItem('user_token');
 
