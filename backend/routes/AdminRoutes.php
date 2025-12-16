@@ -1,0 +1,90 @@
+<?php
+
+require __DIR__ . '/../services/AdminService.php';
+
+Flight::group('/admin', function () {
+
+
+
+
+
+    /**
+     * @OA\Get(
+     *     path="/admin/orders",
+     *     summary="Get all orders",
+     *     description="Retrieves a comprehensive list of all orders placed in the system, typically used for administrative dashboards",
+     *     tags={"Admin"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="List of all orders retrieved successfully",
+     *         @OA\Schema(
+     *             type="array",
+     *             items=@OA\Schema(
+     *                 type="object",
+     *                 properties={
+     *                     @OA\Property(property="order_id", type="integer", description="The unique ID of the order"),
+     *                     @OA\Property(property="user_id", type="integer", description="The ID of the user who placed the order"),
+     *                     @OA\Property(property="order_total", type="number", format="decimal", description="The total cost of the order"),
+     *                     @OA\Property(property="created_at", type="string", format="date-time", description="Timestamp when the order was created"),
+     *                     @OA\Property(
+     *                         property="items", 
+     *                         type="array", 
+     *                         description="List of items in the order",
+     *                         @OA\Items(type="object")
+     *                     )
+     *                 }
+     *             )
+     *         )
+     *     )
+     * )
+     */
+    Flight::route('GET /orders', function () {
+        $service = new AdminService();
+        Flight::json($service->getAllOrders());
+    });
+
+
+
+    /**
+     * @OA\Get(
+     *     path="/admin/totalstats",
+     *     operationId="getTotalStats",
+     *     tags={"Admin Orders"},
+     *     summary="Get total order statistics",
+     *     description="Retrieves the total number of orders placed and the total revenue generated. Requires admin authentication.",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successfully retrieved statistics",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="total_orders", 
+     *                 type="integer", 
+     *                 example=127,
+     *                 description="Total count of orders in the system"
+     *             ),
+     *             @OA\Property(
+     *                 property="total_revenue", 
+     *                 type="number", 
+     *                 format="float", 
+     *                 example=12450.00,
+     *                 description="Total sum of all order amounts"
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Forbidden - Admin access required"
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     )
+     * )
+     */
+    Flight::route('GET /totalstats', function () {
+        $service = new AdminService();
+        Flight::json($service->getTotalStats());
+    });
+});

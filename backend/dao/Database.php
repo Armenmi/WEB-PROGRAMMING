@@ -1,12 +1,14 @@
 <?php
-class Database {
+class Database
+{
     private static $host = 'localhost';
     private static $dbName = 'sports_shop';
-    private static $username = 'root';
-    private static $password = '';
+    private static $username = 'webapp';
+    private static $password = 'Password123!';
     private static $connection = null;
 
-    public static function connect() {
+    public static function connect()
+    {
         if (self::$connection === null) {
             try {
                 self::$connection = new PDO(
@@ -18,11 +20,6 @@ class Database {
                         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
                     ]
                 );
-
-                if (self::$connection) {
-                    echo "✅ Works!";
-                }
-
             } catch (PDOException $e) {
                 die("❌ Connection failed: " . $e->getMessage());
             }
@@ -30,4 +27,3 @@ class Database {
         return self::$connection;
     }
 }
-?>
